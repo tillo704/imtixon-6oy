@@ -1,8 +1,10 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Customer,Reservation,Ticket
+from rest_framework import decorators
 from .serializer import ReservationSerializer,CustomerSerializer,TicketSerializer
 from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticatedOrReadOnly,IsAuthenticated
+
 
 
 class CustomListCreatAPIView(ListCreateAPIView):

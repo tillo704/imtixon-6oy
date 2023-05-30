@@ -11,10 +11,6 @@ class Customer(models.Model):
     cantact = models.CharField(max_length=25)
     email = models.EmailField() 
 
-    # def __str__(self) -> str:
-    #     return self.f_name
-
-
 
 
 class Ticket(models.Model):
@@ -29,10 +25,9 @@ class Ticket(models.Model):
         return f"Ticket - {self.ticket_num}"
 
 
- 
-
 
 class Reservation(models.Model):
+    
     cust_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
     admin = models.ForeignKey(User,on_delete=models.CASCADE)
     ticket = models.ForeignKey(Ticket,on_delete=models.CASCADE)
